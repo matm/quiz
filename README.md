@@ -14,7 +14,7 @@ A: Here is a Go implementation using a prefix tree data structure, suitable for 
 
 First, make sure you have a workding Go installation. Then install the program with
 ```
-$ go install github.com/matm/quiz
+$ go get -u github.com/matm/quiz
 ```
 
 # Usage
