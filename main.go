@@ -10,6 +10,7 @@ import (
 	"io"
 	"log"
 	"os"
+	"time"
 )
 
 // Node holding a letter and possible children. Boundary
@@ -95,6 +96,7 @@ func findLongestCompoundWord(r io.Reader) string {
 	pq := list.New() // Processing queue
 	scanner := bufio.NewScanner(r)
 
+	start := time.Now()
 	// Insert words into the tree data structure
 	count := 0
 	for scanner.Scan() {
@@ -106,6 +108,7 @@ func findLongestCompoundWord(r io.Reader) string {
 		tree.addWord(word)
 		count++
 	}
+	fmt.Printf("Inserted words in %v\n", time.Since(start))
 
 	// Now process pairs in the queue
 	var match string
@@ -122,6 +125,7 @@ func findLongestCompoundWord(r io.Reader) string {
 			}
 		}
 	}
+	fmt.Printf("Took %v\n", time.Since(start))
 	return match
 }
 
@@ -141,5 +145,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(findLongestCompoundWord(f))
+	word := findLongestCompoundWord(f)
+	fmt.Printf("\nWord is: %s (%d)\n", word, len(word))
 }
