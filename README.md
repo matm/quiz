@@ -12,7 +12,7 @@ A: Here is a Go implementation using a prefix tree data structure, suitable for 
 
 # Installation
 
-First, make sure you have a workding Go installation. Then install the program with
+First, ensure you have a working Go installation. Then install the program with
 ```
 $ go get -u github.com/matm/quiz
 ```
