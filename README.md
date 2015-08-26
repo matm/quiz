@@ -8,4 +8,18 @@ Fork this repo, add your solution and documentation on how to compile and run yo
 
 Obviously, we are looking for a fresh solution, not based on others' code.
 
+A: Here is a Go implementation using a prefix tree data structure, suitable for inserting words from a sorted list and searching prefixes.
 
+# Installation
+
+First, make sure you have a workding Go installation. Then install the program with
+```
+$ go install github.com/matm/quiz
+```
+
+# Usage
+
+Run the program against a sorted list of words as first argument:
+```
+$ quiz word.list
+```
